@@ -1,48 +1,97 @@
-### A Oliveira Trust:
-A Oliveira Trust é uma das maiores empresas do setor Financeiro com muito orgulho, desde 1991, realizamos as maiores transações do mercado de Títulos e Valores Mobiliários.
+#API BACKEND PHP FRONTEND REACTJS "CONVERSÃO DE MOEDAS"
 
-Somos uma empresa em que valorizamos o nosso colaborador em primeiro lugar, sempre! Alinhando isso com a nossa missão "Promover a satisfação dos nossos clientes e o desenvolvimento pessoal e profissional da nossa equipe", estamos construindo times excepcionais em Tecnologia, Comercial, Engenharia de Software, Produto, Financeiro, Jurídico e Data Science.
+---
 
-Estamos buscando uma pessoa que seja movida a desafios, que saiba trabalhar em equipe e queira revolucionar o mercado financeiro!
+Projeto desenvolvido com estrutura API REST no backend em PHP, Banco de dados MySQL, Frontend com ReactJS utilizando algumas bibliotecas PHP/JavaSCript.
 
-Front-end? Back-end? Full Stack? Analista de dados? Queremos conhecer gente boa, que goste de colocar a mão na massa, seja responsável e queira fazer história!
+Foi utilizado Docker e docker-compose para o desenvolvimento, e alguns conceitos DDD e TDD na arquitetura do projeto.
 
-#### O que você precisa saber para entrar no nosso time: 🚀
-- Trabalhar com frameworks (Laravel, Lumen, Yii, Cake, Symfony ou outros...)
-- Banco de dados relacional (MySql, MariaDB)
-- Trabalhar com microsserviços
+Optei por não utilizar nenhum framework para exercitar e melhorar meu entendimento sobre como eles funcionam.
 
-#### O que seria legal você saber também: 🚀
-- Conhecimento em banco de dados não relacional;
-- Conhecimento em docker;
-- Conhecimento nos serviços da AWS (RDS, DynamoDB, DocumentDB, Elasticsearch);
-- Conhecimento em metodologias ágeis (Scrum/Kanban);
+Para o controle da persistência de dados utilizei Doctrine, que acredito ser uma ferramenta muito eficiente neste trabalho.
 
-#### Ao entrar nessa jornada com o nosso time, você vai: 🚀
-- Trabalhar em uma equipe de tecnologia, em um ambiente leve e descontraído e vivenciar a experiência de mudar o mercado financeiro;
-- Dress code da forma que você se sentir mais confortável;
-- Flexibilidade para home office e horários;
-- Acesso a cursos patrocinados pela empresa;
 
-#### Benefícios 🚀
-- Salário compatível com o mercado;
-- Vale Refeição;
-- Vale Alimentação;
-- Vale Transporte ou Vale Combustível;
-- Plano de Saúde e Odontológico;
-- Seguro de vida;
-- PLR Semestral;
-- Horário Flexível;
-- Parcerias em farmácias
+<p align="center">	
+   <a href="https://www.linkedin.com/in/developer-danielmn/">
+      <img alt="Daniel Meireles" src="https://img.shields.io/badge/-Daniel Meireles-0080000?style=flat&logo=Linkedin&logoColor=white" />
+   </a>
+</p>
 
-#### Local: 🚀
-Barra da Tijuca, Rio de Janeiro, RJ
+# :pushpin: Índice
 
-#### Conheça mais sobre nós! :sunglasses:
-- Website (https://www.oliveiratrust.com.br/)
-- LinkedIn (https://www.linkedin.com/company/oliveiratrust/)
+- [Sobre](#sobre)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Como Usar](#como-usar)
 
-A Oliveira Trust acredita na inclusão e na promoção da diversidade em todas as suas formas. Temos como valores o respeito e valorização das pessoas e combatemos qualquer tipo de discriminação. Incentivamos a todos que se identifiquem com o perfil e requisitos das vagas disponíveis que candidatem, sem qualquer distinção.
 
-## Pronto para o desafio? 🚀🚀🚀🚀
-https://github.com/Oliveira-Trust/desafio-desenvolvedor/blob/master/vaga.md
+<a id="sobre"></a>
+
+## :bookmark: Sobre
+
+O <strong>Projeto Conversão de moedas</strong> é um projeto desenvolvido consumindo a api [https://docs.awesomeapi.com.br/api-de-moedas](https://docs.awesomeapi.com.br/api-de-moedas).
+Backend em PHP frontend em ReactJS e usa o banco MySQL para armazenar os dados.
+
+A lógica de negócio está separada na pasta ‘domain’, sendo assim o projeto pode ser implementado independente de framework ou ferramenta de acesso.
+
+Optei por esta abordagem para praticar o conhecimento recém adquirido em TDD e DDD.
+Claro que é possível melhorar e muito a abordagem aqui utilizada, mas estou satisfeito com o resultado até o momento.
+
+
+
+<a id="tecnologias-utilizadas"></a>
+
+## :rocket: Tecnologias Utilizadas
+
+O projeto foi desenvolvido utilizando as seguintes tecnologias:
+
+- [Docker](https://docker.com)
+- [PHP](https://www.php.net/)
+- [MySQL](https://www.mysql.com/)
+- [ReactJS](https://pt-br.reactjs.org/)
+ 
+<a id="como-usar"></a>
+
+# :construction_worker: Como Usar
+
+### **Pré-requisitos**
+
+  - É **necessário** possuir o **[Docker](https://docker.com)** e **[Docker Composer](https://docs.docker.com/compose/install/)** instalado na máquina.
+  - Também, é **necessário** ter o **[NodeJS](https://nodejs.org/en/)** instalado pois o frontend não rodara dentro de um container como o backend.
+
+```bash
+# Clone o Repositório
+$ git clone URL_DO_REPOSITÓRIO.
+```
+### :whale: Executando o Projeto
+
+### Backend
+```bash
+# Entre na pasta projeto
+$ cd NOME_DA_PASTA_DO_PROJETO
+
+```
+```bash
+# Entrar na pasta do backend 'api/backend' e copiar o arquivo .env.exemple renomeando para .env
+# Ele já possui as configuraçẽos necessárias para rodar o projeto, após copiar, voltar para a pasta raiz do projeto onde está o arquivo docker-compose.yml.
+$ cd NOME_DA_PASTA_DO_PROJETO
+```
+```bash
+# Levantando os Containers. 
+# A imagem php-apache construída para o projeto, já está pronta para rodar as migrations e manter o apache funcionando.
+$ docker-compose up -d --build
+```
+### Frontend
+```bash
+# Para configurar o frontend é necessário ter o NodeJS instalado, entrar na pasta ./frontend.
+# Instalar as bibliotecas necessárias com o comando:
+$ npm install
+```
+```bash
+# Após instalar as bibliotecas digite o comando:
+$ npm start
+```
+---
+
+<h4 align="center">
+    Feito com ❤️ by <a href="https://www.linkedin.com/in/developer-danielmn/" target="_blank">Daniel Meireles</a>
+</h4>

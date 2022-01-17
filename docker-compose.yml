@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  php:
+    build: 
+      context: ./api
+    image: danielmn36/php-apache:latest
+    container_name: php
+    volumes:
+      - ./api/backend:/var/www
+    entrypoint: dockerize -wait tcp://db:3306 -timeout 40s 
+    command: sh /entrypoint.sh
+    ports:
+      - 8080:80
+    depends_on:
+      - db
+  db:
+    image: mysql:5.7
+    container_name: db
+    restart: always
+    ports:
+      - 3306:3306
+    volumes: 
+      - ./docker-mysql:/var/lib/mysql
+    environment: 
+      - MYSQL_DATABASE=oliveira_trust
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=danielmn
+      - MYSQL_PASSWORD=123456

@@ -1,0 +1,5 @@
+.vscode
+dump.sql
+dbdata
+docker-mysql/
+api/backend/.composer/
