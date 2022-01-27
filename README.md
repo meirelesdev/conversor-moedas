@@ -1,4 +1,4 @@
-#API BACKEND PHP FRONTEND REACTJS "CONVERSÃO DE MOEDAS"
+# API BACKEND PHP FRONTEND REACTJS "CONVERSÃO DE MOEDAS"
 
 ---
 
@@ -60,24 +60,31 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
 ```bash
 # Clone o Repositório
-$ git clone URL_DO_REPOSITÓRIO.
+$ git clone https://github.com/meirelesdev/conversor-moedas.git.
 ```
 ### :whale: Executando o Projeto
 
 ### Backend
 ```bash
 # Entre na pasta projeto
-$ cd NOME_DA_PASTA_DO_PROJETO
+$ cd conversor-moedas
 
 ```
 ```bash
-# Entrar na pasta do backend 'api/backend' e copiar o arquivo .env.exemple renomeando para .env
-# Ele já possui as configuraçẽos necessárias para rodar o projeto, após copiar, voltar para a pasta raiz do projeto onde está o arquivo docker-compose.yml.
-$ cd NOME_DA_PASTA_DO_PROJETO
+# Entrar na pasta do backend 'api/backend'
+$ cd api/backend
+```
+```bash
+# e copiar o arquivo .env.exemple renomeando para .env
+$ cp .env.exemple .env
+# Ele já possui as configuraçẽos necessárias para rodar o projeto.
+```
+```bash
+# Após copiar, voltar para a pasta raiz do projeto onde está o arquivo docker-compose.yml.
+# A imagem php-apache construída para o projeto, já está pronta para rodar as migrations e manter o apache funcionando.
 ```
 ```bash
 # Levantando os Containers. 
-# A imagem php-apache construída para o projeto, já está pronta para rodar as migrations e manter o apache funcionando.
 $ docker-compose up -d --build
 ```
 ### Frontend
